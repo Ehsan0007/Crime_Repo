@@ -9,6 +9,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 // import Divider from 'material-ui/Divider';
 // import Paper from 'material-ui/Paper';
 // import TextField from 'material-ui/TextField';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import TableCrime from './MainCrime'
 
 const homeapp = {
    width : '15  0%',
@@ -76,25 +78,17 @@ class Home extends Component {
         return (
            
             <div className="App">
-                 <AppBar
-                        title={this.state.name}
+                 <AppBar style={{backgroundColor : '#9C27B0'}}
+                        title="Crime Report System"
                         iconClassNameRight="muidocs-icon-navigation-expand-more">
-                   <Link to ="/home/donor-detail">  <RaisedButton label="Donor-List" primary={true} style={list} /></Link>
-                     <RaisedButton label="Donor-Search" primary={true} style={search} />
-                     <RaisedButton label="Logout" primary={true} style={logout} />
-                        </AppBar>
-             
-                {this.props.children}
-                {/*{(this.props.authReducer.user.type === 'donor') ?
 
-                    <div style={styles.root}>
-                        <h1>mani </h1>
-                    </div>
-                    :
-                    <div>
-                        <Link to="/donorList">Donors</Link>
-                        <Link to="/aboutnested">About</Link>
-                    </div>}*/}
+               
+                      <Link to ="/home/signup"> <RaisedButton label="SignUp"  style={search} /></Link>
+                     <Link to ="/home/login"><RaisedButton label="Login" style={logout} /></Link>
+                        </AppBar>
+                <TableCrime/>
+                {this.props.children}
+              
             </div>
         );
     }

@@ -7,7 +7,8 @@ import Home from './components/home';
 import SignUp from './components/signup';
 import Login from './components/login';
 import Donors from './components/donors';
-import Donor from './components/donor_detail'
+import TableCrime from './components/MainCrime'
+// import Donor from './components/donor_detail'
 import NestedAbout from './components/aboutnestedroute';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -24,12 +25,12 @@ ReactDOM.render((
                
                
                <Route path="/home" component={Home}>
-                    <Route path="donor-detail" component={Donor}></Route>
-                    <Route path="aboutnested" component={NestedAbout}></Route>
+                    <Route path="signup" component={SignUp}></Route>
+                    <Route path="login" component={Login}></Route>
                  </Route>
 
-                <Route path="/" component={App}>
-                    <IndexRoute component={SignUp} />
+                <Route path="/" component={Home}>
+                    <IndexRoute component={TableCrime} />
                 </Route>
             </Router>
         </Provider>

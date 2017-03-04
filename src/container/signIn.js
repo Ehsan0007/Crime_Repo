@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link } from "react-router"
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import AppBar from 'material-ui/AppBar';
 import Paper from 'material-ui/Paper';
 
 
@@ -12,8 +11,8 @@ export class SigninComponent extends React.Component {
 
     render() {
         const center = {
-            width: '90%',
-            margin: '0 auto'
+            width: '80%',
+            margin: 'auto'
         }
          const Main_App = {
             width: '100%',
@@ -30,46 +29,20 @@ export class SigninComponent extends React.Component {
         };
         const login = {
             marginLeft : -170,
-            marginTop : 20
+            marginTop : 20,
+            backgroundColor : '#9C27B0'
         }
       
         const para = {
            marginLeft : -110
         }
         return (
-            /*<div style={center}>
-                <AppBar
-                    title="Please Signin"
-                    showMenuIconButton={false} />
-                <form onSubmit={this.props._submit}>
-                    <TextField
-                        type="email"
-                        hintText="email"
-                        name="email"
-                        onChange={this.props._inputHandler}
-                        required fullWidth
-                        /><br />
-
-                    <TextField
-                        type="password"
-                        hintText="password"
-                        name="pass"
-                        onChange={this.props._inputHandler}
-                        required fullWidth
-                        /><br />
-                    <RaisedButton type="submit" label="Sign in" primary={true} />
-                </form>
-                <div style={{ marginTop: "10px" }}> Don't have account?? <Link to="/" style={{ cursor: "pointer" }}>Create an account.</Link>
-                </div>
-            </div>*/
+        
             <div style={center}>
-                <AppBar style={Main_App}
-                    title="Online Blood System"
-                    showMenuIconButton={false} />
-              
+
                     <Paper style={paperstyle} zDepth={5}>
                     <form onSubmit={this.props._submit} >
-                        <h1 style={{color:'#87ceeb'}}>Login</h1>
+                        <h1 style={{color:'#9C27B0'}}>Login</h1>
                         <TextField
                              hintText="Enter Email Address"
                              floatingLabelText="Email Address"
@@ -86,8 +59,7 @@ export class SigninComponent extends React.Component {
                              onChange={this.props._inputHandler}
                              /><br />
 
-                         <RaisedButton type="submit" label="Login" primary={true} style={login}/><br/>
-                          {/*<p style={para}>Create Account <Link to="/login">Login</Link></p>*/}
+                         <RaisedButton type="submit" label="Login"  style={login}/><br/>
                    
                     <br />
                    

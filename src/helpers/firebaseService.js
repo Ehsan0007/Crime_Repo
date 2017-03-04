@@ -1,49 +1,16 @@
 import * as firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyCMlqXeNC9neoYJmVtnnHyns8e7KrXXEx4",
-    authDomain: "login-9e34a.firebaseapp.com",
-    databaseURL: "https://login-9e34a.firebaseio.com",
-    storageBucket: "login-9e34a.appspot.com",
-    messagingSenderId: "47637167713"
+   apiKey: "AIzaSyDN8ycIbRZaoPvT8tUkRuDhSAm1V6R1v0A",
+    authDomain: "fir-595e6.firebaseapp.com",
+    databaseURL: "https://fir-595e6.firebaseio.com",
+    storageBucket: "fir-595e6.appspot.com",
+    messagingSenderId: "913680197438"
 };
+
 firebase.initializeApp(config);
-export class FirebaseService {
+export const database = firebase.database();
 
-    static firebaseTimeStamp = firebase.database['ServerValue'].TIMESTAMP;
-    static ref = firebase.database().ref();
-    static storage = firebase.storage().ref();
-    static auth = firebase.auth();
+export const storage = firebase.storage();
 
-    // constructor() { }
-
-    static saveMultipath(multipath) {
-        return this.ref.update(multipath);
-    } // saveMultipath
-
-    static customAuth(user) {
-        return this.auth.createUserWithEmailAndPassword(user.email, user.pass);
-    } //AuthNewUser
-
-    static customLogin(user) {
-        return this.auth.signInWithEmailAndPassword(user.email, user.pass);
-    } //loginUser
-
-    static addNewUser(user) {
-        return this.ref.child(user).set();
-    } //AuthNewUser
-
-    static getPushRef(path) {
-        return this.ref.child(path).push();
-    }
-    // static uploadImageOnStorageBlob(path, blob) {
-    //     return new Promise(res => {
-    //         this.storage.child(path).put(blob).then((snapshot) => {
-    //             console.log('Uploaded a blob or file!');
-    //             // The promise will resolve with a Download URL provided by Firebase Storage
-    //             res(snapshot.downloadURL);
-    //         })
-    //     });
-    // }
-
-}
+export const fbAuth = firebase.auth();

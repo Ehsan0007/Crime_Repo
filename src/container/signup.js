@@ -57,12 +57,10 @@ export class SignupComponent extends React.Component {
 
         return (
             <div style={center}>
-                <AppBar style={Main_App}
-                    title="Online Blood System"
-                    showMenuIconButton={false} />
+              
                 <Paper style={paperstyle} zDepth={5}>
                     <form onSubmit={this.props._submit} >
-                        <h1 style={{ color: '#87ceeb' }}>SignUP</h1>
+                        <h1 style={{ color: '#9C27B0' }}>SignUP</h1>
                         <TextField
                             hintText="First Name"
                             floatingLabelText="First Name"
@@ -72,17 +70,8 @@ export class SignupComponent extends React.Component {
                             onChange={this.props._inputHandler}
                         /><br />
                         <TextField
-                            hintText="Last Name"
-                            floatingLabelText="Last Name"
-                            name="last"
-                            ref="last"
-                            value={this.props.signUpState.last}
-                            onChange={this.props._inputHandler}
-                        /><br />
-
-                        <TextField
-                            hintText="Enter Email"
-                            floatingLabelText="Email"
+                            hintText="Gender"
+                            floatingLabelText="Gender"
                             name="email"
                             ref="email"
                             value={this.props.signUpState.email}
@@ -97,34 +86,8 @@ export class SignupComponent extends React.Component {
                             onChange={this.props._inputHandler}
                         /><br />
 
-                        <select
-                            name="blood"
-                            value={this.props.signUpState.blood}
-                            required
-                            onChange={this.props._inputHandler}>
-                            <option>Blood Type   </option>
-                            <option value="A">A+   </option>
-                            <option value="B">B+   </option>
-                            <option value="O">O+   </option>
-                            <option value="AB">AB+</option>
-                        </select>
-                        {/*<SelectField
-                            name="group"
-                            floatingLabelText="Frequency"
-                            value={this.props.signUpState.group}
-                            onChange={this.props._inputHandler}
-                            style={styles.customWidth}
-                        >
-                            <MenuItem value="A" primaryText="A" />
-                            <MenuItem value="AB" primaryText="AB" />
-                            <MenuItem value="B" primaryText="B" />
-                            <MenuItem value="O" primaryText="O" />
-
-
-                        </SelectField><br />*/}
-
+                    
                         <RaisedButton type="submit" label="Submit" primary={true} style={login} /><br />
-                        <p style={para}>Create Account <Link to="/login">Login</Link></p>
 
                         <br />
 
